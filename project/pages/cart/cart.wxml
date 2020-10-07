@@ -1,3 +1,30 @@
-<view>
-  我是购物车页面
+<view class="cart-container" wx:if="{{cartList.length > 0}}">
+  <view class="cart-list">
+    <view class="cart-list-item" wx:for="{{cartList}}" wx:key="index">
+      <text class="title">{{item.title}}</text>
+      <text class="desc">{{item.desc}}</text>
+      <text class="price">¥{{item.price}}</text>
+      <view class="computed">
+        <view class="decrement" data-index="{{index}}" bindtap="decrement">-</view>
+        <view class="num">{{item.num}}</view>
+        <view class="increment" data-index="{{index}}"  bindtap="increment">+</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="cart-footer">
+    <view class="cart-total-price">
+      总计: <text>¥{{totalPrice}}</text>
+    </view>
+    <view class="cart-btn-group">
+      <view class="cart-btn-add">继续添加</view>
+      <view class="cart-btn-settlement">去结算({{totalNum}})</view>
+    </view>
+  </view>
+</view>
+
+<view class="no-cart-container" wx:else>
+  <view class="text">购物车是空的</view>
+  <image src="../../assets/image/cart.png" />
+  <view class="button">扫一扫条形码</view>
 </view>
