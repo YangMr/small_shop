@@ -45,7 +45,7 @@
     <view class="pay-money">
       实际支付: <text>¥{{totalPrice}}</text>
     </view>
-    <view class="confim-pay">
+    <view class="confim-pay" bindtap="doPay">
       确认支付
     </view>
   </view>
