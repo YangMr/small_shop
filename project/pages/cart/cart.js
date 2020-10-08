@@ -1,6 +1,66 @@
 import {storage} from "../../utils/storage";
+import {IndexModel} from "../../models/index";
+import {cart} from "../../business/cart";
+const indexMode = new IndexModel();
 // pages/cart/cart.js
 Page({
+
+  //定义跳转到订单页面
+  goOrder(){
+    wx.navigateTo({
+      url: '/pages/order/order',
+    })
+  },
+
+  //继续添加到购物车方法
+  goAdd(){
+    wx.scanCode({
+      onlyFromCamera: true,
+      success : (res)=>{
+        //获取到了商品的条形码
+        const qr_code = res.result;
+        //如果获取到了商品条形码,然后我们通过条形码获取商品的信息
+        if(qr_code){
+          this.getProduct(qr_code);
+        }else{
+          wx.showToast({
+            title: '商品条形码出错,请重新获取',
+            icon : "none",
+            duration : 1000
+          })
+        }
+      }
+    })
+  },
+
+  //定义一个获取商品信息的方法
+  getProduct(qr_code){
+    //当发送请求的时候显示loading加载
+    wx.showLoading({
+      title: '加载中',
+    });
+    //调用获取商品信息接口
+    indexMode.getProduct(qr_code).then(res=>{
+      const cartData = res.data.result[0];
+      //判断如果返回的数据为true,就跳转到购物车页面
+      if(res.data.success){
+      
+        //调用将商品信息存储到本地的方法
+        cart.addCart(cartData);
+
+        const cartList = storage.get("carts");
+        if(cartList){
+          this.setData({
+            cartList : cartList
+          })
+        }
+        this.computedProduct()
+
+      }
+      //当数据请求成功后隐藏loading加载
+      wx.hideLoading()
+    })
+  },
 
   //商品减少的方法
   decrement(e){

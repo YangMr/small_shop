@@ -1,0 +1,52 @@
+<view class="order-container">
+
+  <view class="order-info">
+    <block wx:for="{{cartList}}" wx:key="index">
+      <view class="order-info-item">
+        <view class="order-title">
+          <text>{{item.title}}</text>
+          <text class="order-title-price">¥{{item.price}}</text>
+        </view>
+        <view class="order-count">
+          <text>x{{item.num}}</text>
+        </view>
+      </view>
+    </block>
+
+
+    <view class="order-toggle" bindtap="toggle">
+      <text>共{{cartList.length}}件商品 {{len == 1 ? "展开" : "收起"}}</text>
+    </view>
+  </view>
+
+  <view class="order-option">
+    <view class="order-lines order-list">
+      <view class="lines">
+        余额 <text>(¥4)</text>
+      </view>
+      <switch />
+    </view>
+    <view class="order-product order-list">
+      <text>商品金额</text>
+      <text>¥{{totalPrice}}</text>
+    </view>
+    <view class="order-decrement order-list">
+      <text>余额减扣</text>
+      <text>-¥{{lines}}</text>
+    </view>
+  </view>
+
+  <view class="order-tip">
+    <icon type="warn" color="#ccc" />
+    <text>请支付完成后携带商品</text>
+  </view>
+
+  <view class="order-pay">
+    <view class="pay-money">
+      实际支付: <text>¥{{totalPrice}}</text>
+    </view>
+    <view class="confim-pay">
+      确认支付
+    </view>
+  </view>
+</view>

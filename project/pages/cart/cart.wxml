@@ -17,8 +17,8 @@
       总计: <text>¥{{totalPrice}}</text>
     </view>
     <view class="cart-btn-group">
-      <view class="cart-btn-add">继续添加</view>
-      <view class="cart-btn-settlement">去结算({{totalNum}})</view>
+      <view class="cart-btn-add" bindtap="goAdd">继续添加</view>
+      <view class="cart-btn-settlement" bindtap="goOrder">去结算({{totalNum}})</view>
     </view>
   </view>
 </view>
@@ -26,5 +26,5 @@
 <view class="no-cart-container" wx:else>
   <view class="text">购物车是空的</view>
   <image src="../../assets/image/cart.png" />
-  <view class="button">扫一扫条形码</view>
+  <view class="button" bindtap="goAdd">扫一扫条形码</view>
 </view>

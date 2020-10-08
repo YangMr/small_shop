@@ -1,0 +1,92 @@
+/* pages/order/order.wxss */
+.order-container{
+  height: 100%;
+  background-color: #F8F9F8;
+}
+.order-info{
+  padding: 20rpx;
+  background-color: #fff;
+}
+.order-info-item{
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom : 1px solid #ccc;
+}
+.order-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+.order-title-price{
+  color : red;
+}
+.order-count{
+  font-size: 22rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.order-toggle{
+  height: 60rpx;
+  padding-top: 20rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+.order-list{
+  padding: 0 20rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.lines text{
+  color :red;
+}
+.order-tip{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color : #333;
+  font-size: 24rpx;
+  margin-top: 150rpx;
+}
+.order-tip text{
+  margin-left: 10rpx;
+}
+.order-pay{
+  display: flex;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+}
+
+.pay-money{
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #fff;
+  flex:2;
+  color: #ccc;
+  padding-left: 10rpx;
+  font-size: 26rpx;
+}
+.pay-money text{
+  color : red;
+}
+.confim-pay{
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #FFA72A;
+  text-align: center;
+  color: #fff;
+  flex : 1;
+  font-size: 26rpx;
+}
