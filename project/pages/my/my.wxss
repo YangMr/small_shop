@@ -1,1 +1,44 @@
 /* pages/my/my.wxss */
+.my-container{
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  
+}
+.my-container .header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.header .bg{
+  width: 100%;
+  height: 380rpx;
+  background-color: darkolivegreen;
+}
+.header .userinfo{
+  width: 120rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 135rpx;
+}
+.header .image{
+  width: 80rpx;
+  height: 80rpx;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.header .userinfo text{
+  margin-top: 10rpx;
+  font-size: 22rpx;
+}
+.user-button{
+  width: 80rpx !important;
+  height: 80rpx !important;
+  padding: 0 !important;
+  border:none !important;
+  overflow: hidden !important;
+}

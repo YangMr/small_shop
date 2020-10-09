@@ -36,7 +36,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.1",
-  "appid": "wxaafafaaa15022815",
+  "appid": "wx8c8b3bb4e09338eb",
   "projectname": "project",
   "debugOptions": {
     "hidedInDevtools": []
@@ -80,6 +80,13 @@
           "id": -1,
           "name": "order",
           "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "my",
+          "pathName": "pages/my/my",
           "scene": null
         }
       ]
